@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import StartPage from "./pages/startPage";
+import QuizPage from "./pages/QuizPage/QuizPage";
+import fetchQuestions from "./services/fetchQuestions";
+import "./style/app.css";
 
 function App() {
+  const [showQuiz, setShowQuiz] = React.useState(false);
+  const [quizData, setQuizData] = React.useState("");
+  const [isChecked, setIsChecked] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchQuestions().then((data) => setQuizData(data.results));
+    console.log("sideEffect")
+  }, []);
+
+  console.log(quizData)
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      {showQuiz ? 
+      <QuizPage quizData={quizData} checkQuiz={() => setIsChecked(true)} isChecked={isChecked}/> : 
+      <StartPage startQuiz={() => setShowQuiz(true)} />}
+    </main>
   );
 }
 
