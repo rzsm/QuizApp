@@ -7,20 +7,17 @@ import "./style/app.css";
 function App() {
   const [showQuiz, setShowQuiz] = React.useState(false);
   const [quizData, setQuizData] = React.useState("");
-  const [isChecked, setIsChecked] = React.useState(false);
+  
 
   React.useEffect(() => {
-    fetchQuestions().then((data) => setQuizData(data.results));
-    console.log("sideEffect")
+    fetchQuestions().then(data => setQuizData(data.results));    
   }, []);
 
-  console.log(quizData)
-  
 
   return (
     <main>
       {showQuiz ? 
-      <QuizPage quizData={quizData} checkQuiz={() => setIsChecked(true)} isChecked={isChecked}/> : 
+      <QuizPage quizData={quizData} /> : 
       <StartPage startQuiz={() => setShowQuiz(true)} />}
     </main>
   );

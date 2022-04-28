@@ -3,7 +3,24 @@ import Choice from "./Choice";
 import './_multipleQuestion.css'
 
 export default function MultipleQuestion(props) {
+    const [choices, setChoices]= React.useState(() => setMultipleChoices())
+    const [userAnswer, setUserAnswer] = React.useState(null)
 
+    const choicesElements = choices.map((oneChoice, index) => 
+        <Choice 
+            answer={oneChoice.answer} 
+            correct={oneChoice.correct}
+            key={oneChoice.answer}
+            isChecked={props.isChecked}
+            name={props.data.correct_answer}
+            handleSelect={() => handleSelect(index + 1)}
+            checked={index + 1 === userAnswer}
+        />
+        )
+
+    function handleSelect(answerNumber) {
+        setUserAnswer(answerNumber)
+    }      
     
     function setMultipleChoices() {
         const randomOrganizedchoices = [null,null,null,null]
@@ -25,19 +42,14 @@ export default function MultipleQuestion(props) {
 
         return randomOrganizedchoices
     }
-
-
-    
-    
-    
-    const choicesElements = setMultipleChoices().map(each => 
-    <Choice answer={each.answer} correct={each.correct} key={each.answer}/>
-    )
+      
 
     return (
-        <div>
-        <p> {props.data.question} </p>
-        {choicesElements}
+        <div>        
+        <fieldset>
+            <legend> {props.data.question} </legend>
+            {choicesElements}
+        </fieldset>
         </div>
     )
 }

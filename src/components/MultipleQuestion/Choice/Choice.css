@@ -1,0 +1,14 @@
+.radio-input {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radio-label {
+    margin: 10px;
+    border: 2px solid blue;
+}
+
+.selected {
+    background-color: aqua;
+}
