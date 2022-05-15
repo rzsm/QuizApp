@@ -12,3 +12,17 @@
 .selected {
     background-color: aqua;
 }
+
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
+
+.btn {
+    cursor: pointer;
+    margin: 20px;
+}
+  
