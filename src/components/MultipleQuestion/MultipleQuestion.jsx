@@ -16,9 +16,7 @@ export default function MultipleQuestion(props) {
             setUserAnswers={props.setAnswers}
             question={props.data.question}
         />
-    )
-
-       
+    )       
     
     function setMultipleChoices() {
         const randomOrganizedchoices = [null,null,null,null]
@@ -39,8 +37,7 @@ export default function MultipleQuestion(props) {
         }
 
         return randomOrganizedchoices
-    }
-      
+    }      
 
     return (
         <div className={classes.wrapper}>        

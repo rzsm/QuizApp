@@ -28,25 +28,21 @@ export default function QuizPage(props) {
 
   const correctAnswers = answers.filter(answer => answer.userAnswer === answer.correct_answer)
   const score = `${correctAnswers.length}/${props.quizData.length}`
-  
-  const quizPageButton = !isChecked ? 
-                            <Button className={classes['check-btn']} onClick={() => setIsChecked(true)}>
-                            Check Answers
-                            </Button>
-                          :
-                          <div className={classes['play-again-wrapper']}>
-                            <p className={classes.score}>
-                              {`You scored ${score} correct answers`}
-                            </p>
-                            <Button onClick={() => {
-                                props.setNewGame(prev => !prev)
-                                props.setShowQuiz(false)
-                               }
-                              }
-                            >
-                              play agian
-                            </Button>
-                          </div>
+
+  const handleCheckQuiz = () => setIsChecked(true);
+  const handlePlayAgain = () => {
+    props.setNewGame(prev => !prev)
+    props.setShowQuiz(false)  
+  }
+  const quizPageButton = (
+    !isChecked ? 
+      <Button className={classes['check-btn']} onClick={handleCheckQuiz}>Check Answers</Button>
+    :
+    <div className={classes['play-again-wrapper']}>
+      <p className={classes.score}>{`You scored ${score} correct answers`}</p>
+      <Button onClick={handlePlayAgain}>play agian</Button>
+    </div>
+  )
 
   return (
     <>

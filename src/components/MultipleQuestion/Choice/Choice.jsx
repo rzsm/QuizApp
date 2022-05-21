@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import classes from "./Choice.module.css"
 
 export default function Choice(props) {  
-
     const [radioChecked, setRadioChecked] = React.useState(false)
     
     function handleSelect() {        
@@ -17,13 +16,10 @@ export default function Choice(props) {
                     return prevAnswer
                 }
             })
-        })
-
-        
+        })        
     }
 
-    const [currentQuestion] = props.userAnswers.filter(ans => ans.question === props.question)   
-
+    const [currentQuestion] = props.userAnswers.filter(ans => ans.question === props.question) 
     useEffect(() => {  
         if (currentQuestion !== undefined) {
             setRadioChecked(currentQuestion.userAnswer === props.answer) 
@@ -31,14 +27,14 @@ export default function Choice(props) {
     }
     ,[currentQuestion])   
     
-    const labelBackground = !props.isQuizChecked ? 
-                            (radioChecked && classes.selected) : 
-                            (radioChecked ? (
-                                currentQuestion.userAnswer === currentQuestion['correct_answer'] ?
-                                classes.correct:
-                                classes.wrong
-                            ): ''
-                            )
+    const labelBackground = (
+        !props.isQuizChecked ? (radioChecked && classes.selected) : 
+            (radioChecked ? (
+                currentQuestion.userAnswer === currentQuestion['correct_answer'] ?
+                classes.correct:
+                classes.wrong
+            ) : '')
+    )
 
     return (
         <>
@@ -56,7 +52,6 @@ export default function Choice(props) {
             > 
                     {props.answer} 
             </label>
-        </>                    
-        
+        </>       
     )
 }

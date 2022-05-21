@@ -4,5 +4,5 @@ export default function fetchQuestions() {
     return (
         fetch(API_URL)
         .then(response => response.json())
-        )
+    )
 }

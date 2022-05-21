@@ -8,8 +8,7 @@ function App() {
   const [showQuiz, setShowQuiz] = React.useState(false);
   const [quizData, setQuizData] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(true);
-  const [newGame, setNewGame] = React.useState(false); 
-  
+  const [newGame, setNewGame] = React.useState(false);   
 
   React.useEffect(() => {
     fetchQuestions().then(data => {
@@ -17,7 +16,6 @@ function App() {
       setIsLoading(false)
     });    
   }, [newGame]);
-
 
   return (
     !isLoading &&

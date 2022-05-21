@@ -42,12 +42,12 @@
     font-size: 1rem;
     line-height: 15px;
     text-align: center;
-    margin-right: 0.7rem;
+    margin-right: 0.78rem;
 }
 
 .play-again-wrapper button {
     font-family: 'Inter';
     font-style: normal;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     width:120px;
 }
