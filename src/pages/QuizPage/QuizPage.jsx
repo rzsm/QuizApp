@@ -1,6 +1,10 @@
 import React from "react";
-import MultipleQuestion from "../../components/MultipleQuestion";
+import BodyWrapper from "../../components/UI/BodyWrapper";
 import Button from "../../components/UI/Button";
+import yellowSpot from '../../assets/startPageYellowSpot.svg'
+import blueSpot from '../../assets/startPageBlueSpot.svg'
+import MultipleQuestion from "../../components/MultipleQuestion/MultipleQuestion";
+import classes from "./QuizPage.module.css"
 
 export default function QuizPage(props) {
   const [isChecked, setIsChecked] = React.useState(false);
@@ -11,8 +15,6 @@ export default function QuizPage(props) {
       correct_answer : data.correct_answer
     }
   }))  
-
-  // console.log(answers)
   
   const questionsElements = props.quizData.map(data => (
       <MultipleQuestion
@@ -28,14 +30,14 @@ export default function QuizPage(props) {
   const score = `${correctAnswers.length}/${props.quizData.length}`
   
   const quizPageButton = !isChecked ? 
-                            <Button onClick={() => setIsChecked(true)}>
+                            <Button className={classes['check-btn']} onClick={() => setIsChecked(true)}>
                             Check Answers
                             </Button>
                           :
-                          <>
-                            <span>
+                          <div className={classes['play-again-wrapper']}>
+                            <p className={classes.score}>
                               {`You scored ${score} correct answers`}
-                            </span>
+                            </p>
                             <Button onClick={() => {
                                 props.setNewGame(prev => !prev)
                                 props.setShowQuiz(false)
@@ -44,15 +46,17 @@ export default function QuizPage(props) {
                             >
                               play agian
                             </Button>
-                          </>
+                          </div>
 
   return (
     <>
       {!props.isLoading && (
-        <>
-          {questionsElements}
+        <BodyWrapper>
+          <img src={yellowSpot} className={classes['yellow-spot']} />
+          <img src={blueSpot} className={classes['blue-spot']} />
+          <main className={classes.main}>{questionsElements}</main>          
           {quizPageButton}
-        </>
+        </BodyWrapper>
       )}
     </>
   );

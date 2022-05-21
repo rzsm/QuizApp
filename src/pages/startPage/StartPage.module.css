@@ -1,0 +1,32 @@
+.title {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;    
+    text-align: center;    
+}
+
+.description {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.button {
+    width: 157px;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+}
+
+.yellow-spot {
+    position: absolute;
+    right: 0;
+    top: 0;    
+}
+
+.blue-spot {
+    position: absolute;
+    left: 0;
+    bottom: 0;    
+}
+

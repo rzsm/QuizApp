@@ -1,5 +1,5 @@
 import React from "react";
-import Choice from "./Choice";
+import Choice from "./Choice/Choice";
 import classes from './MultipleQuestion.module.css'
 
 export default function MultipleQuestion(props) {
@@ -43,9 +43,9 @@ export default function MultipleQuestion(props) {
       
 
     return (
-        <div>        
-        <fieldset>
-            <legend> {props.data.question} </legend>
+        <div className={classes.wrapper}>        
+        <fieldset className={classes.fieldset}>
+            <legend className={classes.question}> {props.data.question} </legend>
             {choicesElements}
         </fieldset>
         </div>

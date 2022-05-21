@@ -1,0 +1,13 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+    font-style: normal;
+    color: var(--dark-blue);    
+}
+
+:root {
+    --light-blue: #F5F7FB;
+    --dark-blue: #293264;
+}

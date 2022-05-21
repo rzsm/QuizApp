@@ -5,20 +5,27 @@
 }
 
 .radio-label {
-    margin: 10px;
-    border: 2px solid blue;
+    margin-right: 0.8rem;
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
 }
 
 .selected {
-    background-color: aqua;
+    background-color: #D6DBF5;
+    border: 1px solid #D6DBF5;    
 }
 
 .correct {
-    background-color: green;
+    background-color: #94D7A2;
+    border: 1px solid #94D7A2;    
 }
 
 .wrong {
-    background-color: red;
+    background-color: #F8BCBC;
+    border: 1px solid #F8BCBC;  
+    color: hsl(231, 12%, 55%);
 }
 
 .btn {

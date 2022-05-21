@@ -1,16 +1,14 @@
 import React from "react";
-import StartPage from "./pages/startPage";
+import StartPage from "./pages/startPage/StartPage";
 import QuizPage from "./pages/QuizPage/QuizPage";
 import fetchQuestions from "./services/fetchQuestions";
-import "./style/app.css";
+import "./App.css";
 
 function App() {
   const [showQuiz, setShowQuiz] = React.useState(false);
   const [quizData, setQuizData] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(true);
-  const [newGame, setNewGame] = React.useState(false)
-
-  // console.log(quizData)
+  const [newGame, setNewGame] = React.useState(false); 
   
 
   React.useEffect(() => {

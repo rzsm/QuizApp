@@ -1,0 +1,53 @@
+.yellow-spot {
+    position: absolute;
+    right: 0px;
+    top: 0px;     
+}
+
+.blue-spot {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;     
+}
+
+.main {
+    width: 80%;
+    margin-top: 1rem;
+    justify-self: flex-start;
+}
+
+.check-btn {
+    font-family: 'Inter';
+    width: 150px; 
+    font-size: 1rem;    
+    text-align: center;    
+    padding: 0.7rem;
+    margin-bottom: 2rem;
+    margin-top: 1.8rem; 
+    border-radius: 10px;     
+}
+
+.play-again-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.3rem;
+    width: 40%;
+}
+
+.score {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 15px;
+    text-align: center;
+    margin-right: 0.7rem;
+}
+
+.play-again-wrapper button {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 0.9rem;
+    width:120px;
+}

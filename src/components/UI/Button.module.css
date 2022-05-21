@@ -1,5 +1,15 @@
 .btn {
     cursor: pointer;
-    margin: 20px;
+    padding: 0.5rem 1rem;
+    background: var(--dark-blue);
+    color: var(--light-blue);
+    border-radius: 15px;
+    border: none;
+    transition: all 0.5s ease;
 }
+
+.btn:hover {
+    background: hsl(231, 42%, 32%);    
+}
+  
   

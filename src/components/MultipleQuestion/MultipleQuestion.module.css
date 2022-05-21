@@ -1,3 +1,23 @@
 .correct {
     background-color: var(--correct-answer-bg);
 }
+
+.wrapper {
+    border-bottom: 0.1rem solid #DBDEF0;
+    width: 80%;
+    padding: 1rem 0 1.4rem;    
+}
+
+.fieldset {
+    border: none;  
+}
+
+.question { 
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 19px;
+    color: #293264;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
